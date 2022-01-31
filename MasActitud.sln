@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasActitud", "MasActitud\MasActitud.csproj", "{97039D92-5A50-48A5-83CB-A45539336176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasActitud.Utilidades", "MasActitud.Utilidades\MasActitud.Utilidades.csproj", "{C2B38918-CEAF-42E5-BE03-3DA78947DCC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97039D92-5A50-48A5-83CB-A45539336176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97039D92-5A50-48A5-83CB-A45539336176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97039D92-5A50-48A5-83CB-A45539336176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97039D92-5A50-48A5-83CB-A45539336176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2B38918-CEAF-42E5-BE03-3DA78947DCC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2B38918-CEAF-42E5-BE03-3DA78947DCC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2B38918-CEAF-42E5-BE03-3DA78947DCC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2B38918-CEAF-42E5-BE03-3DA78947DCC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB101F91-6EFD-4ABB-885C-1F54AAA91BD5}
+	EndGlobalSection
+EndGlobal
