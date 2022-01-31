@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MasActitud.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220131034449_cambioTipoDato")]
-    partial class cambioTipoDato
+    [Migration("20220131072702_solucion")]
+    partial class solucion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,8 +34,8 @@ namespace MasActitud.Migrations
                     b.Property<string>("nombreEntidad")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("numeroIdentificacion")
-                        .HasColumnType("int");
+                    b.Property<string>("numeroIdentificacion")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.HasKey("numeroContrato");
 
@@ -46,9 +46,8 @@ namespace MasActitud.Migrations
 
             modelBuilder.Entity("MasActitud.Models.Trabajador", b =>
                 {
-                    b.Property<int>("numeroIdentificacion")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("numeroIdentificacion")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.Property<int>("Edad")
                         .HasColumnType("int");
@@ -275,9 +274,7 @@ namespace MasActitud.Migrations
                 {
                     b.HasOne("MasActitud.Models.Trabajador", "Trabajador")
                         .WithMany("Contratos")
-                        .HasForeignKey("numeroIdentificacion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("numeroIdentificacion");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

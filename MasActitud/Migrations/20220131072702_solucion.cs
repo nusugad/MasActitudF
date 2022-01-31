@@ -3,22 +3,18 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MasActitud.Migrations
 {
-    public partial class cambioTipoDato : Migration
+    public partial class solucion : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<int>(
-                name: "numeroIdentificacion",
-                table: "Trabajador",
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "varchar(255) CHARACTER SET utf8mb4")
-                .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+            migrationBuilder.DropForeignKey(
+                name: "FK_Contrato_Trabajador_numeroIdentificacion",
+                table: "Contrato");
 
-            migrationBuilder.AlterColumn<int>(
+            migrationBuilder.AlterColumn<string>(
                 name: "numeroIdentificacion",
                 table: "Contrato",
-                nullable: false,
+                nullable: true,
                 oldClrType: typeof(string),
                 oldType: "varchar(255) CHARACTER SET utf8mb4");
 
@@ -29,24 +25,29 @@ namespace MasActitud.Migrations
                 oldClrType: typeof(string),
                 oldType: "varchar(255) CHARACTER SET utf8mb4")
                 .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Contrato_Trabajador_numeroIdentificacion",
+                table: "Contrato",
+                column: "numeroIdentificacion",
+                principalTable: "Trabajador",
+                principalColumn: "numeroIdentificacion",
+                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<string>(
-                name: "numeroIdentificacion",
-                table: "Trabajador",
-                type: "varchar(255) CHARACTER SET utf8mb4",
-                nullable: false,
-                oldClrType: typeof(int))
-                .OldAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+            migrationBuilder.DropForeignKey(
+                name: "FK_Contrato_Trabajador_numeroIdentificacion",
+                table: "Contrato");
 
             migrationBuilder.AlterColumn<string>(
                 name: "numeroIdentificacion",
                 table: "Contrato",
                 type: "varchar(255) CHARACTER SET utf8mb4",
                 nullable: false,
-                oldClrType: typeof(int));
+                oldClrType: typeof(string),
+                oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
                 name: "numeroContrato",
@@ -55,6 +56,14 @@ namespace MasActitud.Migrations
                 nullable: false,
                 oldClrType: typeof(int))
                 .OldAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Contrato_Trabajador_numeroIdentificacion",
+                table: "Contrato",
+                column: "numeroIdentificacion",
+                principalTable: "Trabajador",
+                principalColumn: "numeroIdentificacion",
+                onDelete: ReferentialAction.Cascade);
         }
     }
 }

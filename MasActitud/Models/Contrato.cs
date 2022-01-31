@@ -17,8 +17,7 @@ namespace MasActitud.Models
         [ForeignKey("Trabajador")]
         [Column(Order = 1)]
 
-        [Required(ErrorMessage = "El numero de identificación es requerido.")]
-        public int numeroIdentificacion { get; set; }
+        public string numeroIdentificacion { get; set; }
 
         [Required(ErrorMessage = "La fecha de inicio es requerida.")]
         [DataType(DataType.Date)]

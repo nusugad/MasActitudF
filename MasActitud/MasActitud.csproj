@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220131034449_cambioTipoDato.cs" />
+    <Compile Remove="Migrations\20220131034449_cambioTipoDato.Designer.cs" />
     <Compile Remove="Migrations\20220131035134_nuevo.cs" />
     <Compile Remove="Migrations\20220131035134_nuevo.Designer.cs" />
   </ItemGroup>

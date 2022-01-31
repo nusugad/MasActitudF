@@ -32,8 +32,8 @@ namespace MasActitud.Migrations
                     b.Property<string>("nombreEntidad")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("numeroIdentificacion")
-                        .HasColumnType("int");
+                    b.Property<string>("numeroIdentificacion")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.HasKey("numeroContrato");
 
@@ -44,9 +44,8 @@ namespace MasActitud.Migrations
 
             modelBuilder.Entity("MasActitud.Models.Trabajador", b =>
                 {
-                    b.Property<int>("numeroIdentificacion")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("numeroIdentificacion")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.Property<int>("Edad")
                         .HasColumnType("int");
@@ -273,9 +272,7 @@ namespace MasActitud.Migrations
                 {
                     b.HasOne("MasActitud.Models.Trabajador", "Trabajador")
                         .WithMany("Contratos")
-                        .HasForeignKey("numeroIdentificacion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("numeroIdentificacion");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
