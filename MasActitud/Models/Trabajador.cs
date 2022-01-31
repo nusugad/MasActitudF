@@ -20,7 +20,7 @@ namespace MasActitud.Models
 
         [Key]
         [Column(Order = 1)]
-        public string numeroIdentificacion { get; set; }
+        public int numeroIdentificacion { get; set; }
         [Required(ErrorMessage = "El primer nombre es requerido.")]
         public string primerNombre { get; set; }
         public string segundoNombre { get; set; }

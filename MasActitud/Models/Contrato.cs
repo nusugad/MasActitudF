@@ -12,13 +12,13 @@ namespace MasActitud.Models
         public string nombreEntidad { get; set; }
 
         [Key]
-        public string numeroContrato { get; set; }
+        public int numeroContrato { get; set; }
 
         [ForeignKey("Trabajador")]
         [Column(Order = 1)]
 
         [Required(ErrorMessage = "El numero de identificación es requerido.")]
-        public string numeroIdentificacion { get; set; }
+        public int numeroIdentificacion { get; set; }
 
         [Required(ErrorMessage = "La fecha de inicio es requerida.")]
         [DataType(DataType.Date)]

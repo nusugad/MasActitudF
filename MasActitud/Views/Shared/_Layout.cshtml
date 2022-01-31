@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MasActitud</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -23,10 +24,10 @@
                     {
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Trabajadores" asp-action="Index">Contrato</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Contratos" asp-action="Index">Contrato</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Contratos" asp-action="Index">Trabajador</a>
+                                <a class="nav-link text-dark" asp-area="Admin" asp-controller="Trabajadores" asp-action="Index">Trabajador</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">RegistraUsuario</a>
@@ -37,10 +38,10 @@
                     {
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Usuario" asp-controller="Trabajadores" asp-action="Trabajador">Contrato</a>
+                                <a class="nav-link text-dark" asp-area="Cliente" asp-controller="Trabajadores" asp-action="Index">Contrato</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="Usuario" asp-controller="Contratos" asp-action="Trabajador">Trabajador</a>
+                                <a class="nav-link text-dark" asp-area="Cliente" asp-controller="Contratos" asp-action="Index">Trabajador</a>
                             </li>
                         </ul>
                     }
@@ -62,6 +63,7 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
