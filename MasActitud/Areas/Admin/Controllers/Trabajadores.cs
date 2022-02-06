@@ -1,5 +1,6 @@
 ﻿using MasActitud.Data;
 using MasActitud.Models;
+using MasActitud.Utilidades;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,10 +16,12 @@ namespace MasActitud.Areas.Admin.Controllers
     public class Trabajadores : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly MasActitud.Utilidades.ICalculos calculos;
 
-        public Trabajadores(ApplicationDbContext context)
+        public Trabajadores(ApplicationDbContext context, MasActitud.Utilidades.ICalculos calculos)
         {
             _context = context;
+            this.calculos = calculos;
         }
 
         [HttpGet]
@@ -39,6 +42,7 @@ namespace MasActitud.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+               trabajador.Edad = calculos.calculoEdad(trabajador.fechaNacimiento);
                 _context.Trabajador.Add(trabajador);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -71,6 +75,7 @@ namespace MasActitud.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                trabajador.Edad = calculos.calculoEdad(trabajador.fechaNacimiento);
                 _context.Trabajador.Update(trabajador);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

@@ -35,6 +35,7 @@ namespace MasActitud
                 .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
             services.AddSingleton<IEmailSender, EmailSender>();
+            services.AddTransient<ICalculos, Calculos>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
