@@ -1,0 +1,26 @@
+﻿@using MasActitud.Utilidades
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+@if (User.IsInRole(CONST.Admin))
+{
+    <div class="text-center">
+        <h1 class="display-4">Administrador</h1>
+        <p>Puedes crear y administrar los roles de los usuarios, además de crear, editar y eliminar información.</p>
+    </div>
+}
+else if (User.IsInRole(CONST.Usuario))
+{
+    <div class="text-center">
+        <h1 class="display-4">Usuario</h1>
+        <p>Navegue por la aplicación a partir del menú superior. Solo tienes permisos para visualizar datos.</p>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-4">Bienvenido</h1>
+        <p>Por favor ingrese o regístrese para poder acceder a la aplicación.</p>
+    </div>
+}

@@ -1,0 +1,56 @@
+﻿@model MasActitud.Models.Contrato
+
+@{
+    ViewData["Title"] = "Crear nuevo contrato";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1 class="text-center">CRUD Contratos</h1>
+
+<hr />
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Crear un nuevo contrato</strong></h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="numeroContrato" class="control-label">Número Contrato</label>
+                    <input asp-for="numeroContrato" class="form-control" />
+                    <span asp-validation-for="numeroContrato" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="nombreEntidad" class="control-label">Nombre Entidad</label>
+                    <input asp-for="nombreEntidad" class="form-control" />
+                    <span asp-validation-for="nombreEntidad" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="numeroIdentificacion" class="control-label">Número identificación</label>
+                    <input asp-for="numeroIdentificacion" class="form-control" />
+                    <span asp-validation-for="numeroIdentificacion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="fechaInicio" class="control-label">Fecha inicio</label>
+                    <input asp-for="fechaInicio" class="form-control" />
+                    <span asp-validation-for="fechaInicio" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="fechaFinalizacion" class="control-label">Fecha Finalización</label>
+                    <input asp-for="fechaFinalizacion" class="form-control" />
+                    <span asp-validation-for="fechaFinalizacion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success"><i class="fas fa-user"></i>Crear Contrato</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Volver a lista</a>
+</div>

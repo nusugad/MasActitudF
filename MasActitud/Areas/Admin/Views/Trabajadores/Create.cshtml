@@ -1,0 +1,71 @@
+﻿@model MasActitud.Models.Trabajador
+
+@{
+    ViewData["Title"] = "Crear nuevo Trabajador";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1 class="text-center">CRUD Trabajador</h1>
+
+<hr />
+<div class="row">
+    <div class="col-12">
+        <div class="card border">
+            <div class="card-header">
+                <h3><strong>Crear un nuevo Trabajador</strong></h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="tipoIdentificacion" class="control-label">Tipo Identificación</label>
+                    <input asp-for="tipoIdentificacion" class="form-control" />
+                    <span asp-validation-for="tipoIdentificacion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="numeroIdentificacion" class="control-label">Número Identificación</label>
+                    <input asp-for="numeroIdentificacion" class="form-control" />
+                    <span asp-validation-for="numeroIdentificacion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="primerNombre" class="control-label">Primer Nombre</label>
+                    <input asp-for="primerNombre" class="form-control" />
+                    <span asp-validation-for="primerNombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="segundoNombre" class="control-label">Segundo Nombre</label>
+                    <input asp-for="segundoNombre" class="form-control" />
+                    <span asp-validation-for="segundoNombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="primerApellido" class="control-label">Primer Apellido</label>
+                    <input asp-for="primerApellido" class="form-control" />
+                    <span asp-validation-for="primerApellido" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="segundoApellido" class="control-label">Segundo Apellido</label>
+                    <input asp-for="segundoApellido" class="form-control" />
+                    <span asp-validation-for="segundoApellido" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="fechaNacimiento" class="control-label">Fecha Nacimiento</label>
+                    <input asp-for="fechaNacimiento" class="form-control" />
+                    <span asp-validation-for="fechaNacimiento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Edad" class="control-label"></label>
+                    <input asp-for="Edad" class="form-control"/>
+                    <span asp-validation-for="Edad" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success"><i class="fas fa-user"></i>Crear Trabajador</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Volver a lista</a>
+</div>
